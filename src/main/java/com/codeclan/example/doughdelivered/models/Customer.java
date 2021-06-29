@@ -1,5 +1,8 @@
 package com.codeclan.example.doughdelivered.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
     private String firstName;
     private String lastName;
@@ -10,6 +13,8 @@ public class Customer {
 
     private List<Order> orders;
 
+    public Customer() {
+    }
 
     public Customer(String firstName, String lastName, String email, String address) {
         this.firstName = firstName;
