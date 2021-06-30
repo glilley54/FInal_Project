@@ -39,7 +39,7 @@ public class Item {
     public Item() {
     }
 
-    public Item(String type, String description, Double price, List<Order> orders) {
+    public Item(String type, String description, Double price) {
 
         this.type = type;
         this.description = description;
