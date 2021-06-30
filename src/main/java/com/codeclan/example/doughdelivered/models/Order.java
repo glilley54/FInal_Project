@@ -1,15 +1,41 @@
 package com.codeclan.example.doughdelivered.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "orders")
 public class Order {
 
 
-    private List<Item> items;
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Customer customer;
+
+
+   @Column(name= "dates")
     private String date;
+
+    @JsonIgnoreProperties(value="orders")
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
+
+
+    @JsonIgnoreProperties(value = "orders")
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            joinColumns = {@JoinColumn(name = "order_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "item_id", nullable = false, updatable = false)}
+    )
+    private List<Item> items;
+
+
 
 
     public Order() {
