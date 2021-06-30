@@ -2,6 +2,7 @@ package com.codeclan.example.doughdelivered.controller;
 
 import com.codeclan.example.doughdelivered.models.Customer;
 import com.codeclan.example.doughdelivered.repositories.CustomerRepository;
+import com.codeclan.example.doughdelivered.repositories.ItemRepository;
 import com.codeclan.example.doughdelivered.repositories.OrderRepository;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +14,15 @@ import java.util.List;
 
     @RestController
     public class CustomerController {
+
     @Autowired
     CustomerRepository customerRepository;
 
     @Autowired
     OrderRepository orderRepository;
+
+    @Autowired
+    ItemRepository itemRepository;
 
 //    GET ALL CUSTOMERS
     @GetMapping("/customers")
@@ -28,7 +33,7 @@ import java.util.List;
 //    GET CUSTOMER DETAILS BY CUSTOMER ID
     @GetMapping(value="/{id}")
     public ResponseEntity<Customer> getCustomer(@PathVariable Long id) {
-        return new ResponseEntity(customerRepository.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(customerRepository.findById(id), HttpStatus.OK);
     }
     // CREATE - ADDING A CUSTOMER TO DATABASE
     @PostMapping("/customers")
@@ -37,7 +42,7 @@ import java.util.List;
         return new ResponseEntity<>(customer, HttpStatus.CREATED);
     }
 
-//        UPDATE CUSTOMER
+//     UPDATE CUSTOMER
 
     @PutMapping(value ="/{id}")
     public ResponseEntity<Customer> putCustomer(@RequestBody Customer customer, @PathVariable Long id){
@@ -60,12 +65,11 @@ import java.util.List;
 
     }
 
-//  GET A PARTICULAR CUSTOMER ORDERS
+//      GET A PARTICULAR CUSTOMER ORDERS
     @GetMapping(value = "/customers/{customerId}/orders")
     public ResponseEntity<List<Order>> getOrdersForCustomer(@PathVariable Long customerId) {
         return new ResponseEntity<>(orderRepository.findAllByOrdersCustomerId(customerId), HttpStatus.OK);
     }
-
 
 
     }
