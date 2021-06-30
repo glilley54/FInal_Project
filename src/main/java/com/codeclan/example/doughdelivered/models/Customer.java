@@ -21,7 +21,7 @@ public class Customer {
         this.lastName = lastName;
         this.email = email;
         this.address = address;
-        this.orders - new ArrayList<Order>();
+        this.orders = new ArrayList<Order>();
     }
 
     public String getFirstName() {

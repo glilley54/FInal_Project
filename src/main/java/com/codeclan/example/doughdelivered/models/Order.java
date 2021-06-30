@@ -1,10 +1,11 @@
 package com.codeclan.example.doughdelivered.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
 
-    private double totalPrice;
+
     private List<Item> items;
     private Long id;
     private Customer customer;
@@ -14,21 +15,14 @@ public class Order {
     public Order() {
     }
 
-    public Order(double totalPrice, List<Item> items, Long id, Customer customer, String date) {
-        this.totalPrice = totalPrice;
-        this.items = items;
-        this.id = id;
+    public Order( Customer customer, String date) {
+
+
         this.customer = customer;
         this.date = date;
+        this.items = new ArrayList<Item>();
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
 
     public List<Item> getItems() {
         return items;
