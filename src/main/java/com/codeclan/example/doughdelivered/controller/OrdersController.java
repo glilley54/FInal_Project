@@ -53,8 +53,8 @@ public class OrdersController {
         public ResponseEntity<Order> putOrder(@RequestBody Order order, @PathVariable Long id){
             Order orderToUpdate = orderRepository.findById(id).get();
             orderToUpdate.setDate(order.getDate());
-            orderToUpdate.setCustomer(order.getCustomer();
-            orderToUpdate.setItems(order.getItems();
+            orderToUpdate.setCustomer(order.getCustomer());
+            orderToUpdate.setItems(order.getItems());
             orderRepository.save(orderToUpdate);
             return new ResponseEntity<>(orderToUpdate, HttpStatus.OK);
         }
@@ -77,4 +77,4 @@ public class OrdersController {
 
     }
 
-}
+

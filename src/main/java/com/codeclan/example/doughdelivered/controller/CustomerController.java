@@ -27,11 +27,10 @@ import java.util.List;
 //    GET ALL CUSTOMERS
     @GetMapping("/customers")
     public ResponseEntity<List<Customer>> getAllCustomers(){
-
         return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
     }
 //    GET CUSTOMER DETAILS BY CUSTOMER ID
-    @GetMapping(value="/{id}")
+    @GetMapping(value="/customers/{id}")
     public ResponseEntity<Customer> getCustomer(@PathVariable Long id) {
         return new ResponseEntity<>(customerRepository.findById(id), HttpStatus.OK);
     }
@@ -68,7 +67,7 @@ import java.util.List;
 //      GET A PARTICULAR CUSTOMER ORDERS
     @GetMapping(value = "/customers/{customerId}/orders")
     public ResponseEntity<List<Order>> getOrdersForCustomer(@PathVariable Long customerId) {
-        return new ResponseEntity<>(orderRepository.findAllByOrdersCustomerId(customerId), HttpStatus.OK);
+            return new ResponseEntity<>(orderRepository.findAllByOrdersCustomerId(customerId), HttpStatus.OK);
     }
 
 
