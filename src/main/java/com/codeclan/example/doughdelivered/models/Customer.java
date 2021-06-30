@@ -1,5 +1,7 @@
 package com.codeclan.example.doughdelivered.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +29,8 @@ public class Customer {
     private String address;
 
 
-
+    @JsonIgnoreProperties(value= "customer")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Order> orders;
 
     public Customer() {
