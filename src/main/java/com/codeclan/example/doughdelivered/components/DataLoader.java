@@ -31,13 +31,22 @@ public class DataLoader implements ApplicationRunner {
         Customer customer1 = new Customer("John","Brown","johnbrown@gmail.com","1 King Road, London,SW4 5PX");
         customerRepository.save(customer1);
 
+        Customer customer2 = new Customer("Brian","Jones","brianjones@gmail.com","25 King Road, London,SW4 5PX");
+        customerRepository.save(customer1);
+
         Order order1 = new Order(customer1,"25/06/2021");
         orderRepository.save(order1);
 
-        Item doughballs = new Item("dough balls","12 first class douballs from Italy",24.99);
+        Order order2 = new Order(customer2,"20/03/2021");
+        orderRepository.save(order2);
+
+        Item doughballs = new Item("dough balls","12 first class doughballs from Italy",24.99);
         itemRepository.save(doughballs);
 
-    }
+        Item sauce = new Item("tomato sauce", "finest pizza sauce in the world", 12,20);
+        itemRepository.save(sauce);
+
+
 
 
     }

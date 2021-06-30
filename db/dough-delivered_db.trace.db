@@ -1,0 +1,15 @@
+2021-06-30 14:12:24 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ORDERS[*]"; SQL statement:
+ORDERS [42000-200]
+2021-06-30 14:12:28 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ORDERS[*]"; SQL statement:
+ORDERS [42000-200]
+2021-06-30 14:12:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ORDERS[*]"; SQL statement:
+ORDERS [42000-200]
+2021-06-30 14:13:53 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ORDER_ID[*]"; SQL statement:
+ORDER_ID [42000-200]
+2021-06-30 14:14:44 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ID[*] DATES CUSTOMER_ID CUSTOMER_ID CUSTOMER_ID ORDER_ID ORDER_ID"; expected "INSERT"; SQL statement:
+ID DATES CUSTOMER_ID CUSTOMER_ID CUSTOMER_ID ORDER_ID ORDER_ID [42001-200]
