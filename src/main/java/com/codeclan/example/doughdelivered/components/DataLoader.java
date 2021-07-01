@@ -44,10 +44,13 @@ public class DataLoader implements ApplicationRunner {
         itemRepository.save(sauce);
 
         Order order1 = new Order(customer1, "25/06/2021");
+        order1.addItem(doughballs);
         orderRepository.save(order1);
 
         Order order2 = new Order(customer2, "20/03/2021");
         orderRepository.save(order2);
+
+
 
 
 

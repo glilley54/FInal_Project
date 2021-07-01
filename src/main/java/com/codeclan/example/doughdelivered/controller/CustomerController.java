@@ -30,8 +30,8 @@ import java.util.List;
 
 //    GET CUSTOMER DETAILS BY CUSTOMER ID
     @GetMapping(value="/customers/{id}")
-    public ResponseEntity<Customer> getCustomer(@PathVariable Long id) {
-        return new ResponseEntity(customerRepository.findById(id), HttpStatus.OK);
+    public ResponseEntity getCustomer(@PathVariable Long id) {
+        return new ResponseEntity<>(customerRepository.findById(id), HttpStatus.OK);
     }
     // CREATE - ADDING A CUSTOMER TO DATABASE
     @PostMapping("/customers")
