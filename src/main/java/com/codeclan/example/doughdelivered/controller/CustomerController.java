@@ -29,7 +29,7 @@ import java.util.List;
         public ResponseEntity<List<Customer>> getAllCustomers() {
             return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
         }
-    }
+
 //    GET CUSTOMER DETAILS BY CUSTOMER ID
     @GetMapping(value="/customers/{id}")
     public ResponseEntity<Customer> getCustomer(@PathVariable Long id) {
@@ -44,7 +44,7 @@ import java.util.List;
 
 //     UPDATE CUSTOMER
 
-    @PutMapping(value ="/customer/{id}")
+    @PutMapping(value ="/customers/{id}")
     public ResponseEntity<Customer> putCustomer(@RequestBody Customer customer, @PathVariable Long id){
         Customer foundCustomer = customerRepository.findById(id).get();
         foundCustomer.setFirstName(customer.getFirstName());
@@ -58,18 +58,18 @@ import java.util.List;
 
 //        DELETE CUSTOMER
 
-    @DeleteMapping(value="/{id}")
+    @DeleteMapping(value="customers/{id}")
     public ResponseEntity<Long> deleteCustomer(@PathVariable Long id) {
         customerRepository.deleteById(id);
         return new ResponseEntity<>(id, HttpStatus.OK);
 
     }
-
-//      GET A PARTICULAR CUSTOMER ORDERS
-    @GetMapping(value = "/customers/{customerId}/orders")
-    public ResponseEntity<List<Order>> getOrdersForCustomer(@PathVariable Long customerId) {
-            return new ResponseEntity<>(orderRepository.findAllByOrdersCustomerId(customerId), HttpStatus.OK);
-    }
-
+//
+////      GET A PARTICULAR CUSTOMER ORDERS
+//    @GetMapping(value = "/customers/{customerId}/orders")
+//    public ResponseEntity<List<Order>> getOrdersForCustomer(@PathVariable Long customerId) {
+//            return new ResponseEntity<List<Order>>(orderRepository.findAllByCustomerId(id), HttpStatus.OK);
+//    }
+//
 
     }
