@@ -21,8 +21,6 @@ import java.util.List;
         @Autowired
         OrderRepository orderRepository;
 
-        @Autowired
-        ItemRepository itemRepository;
 
         //    GET ALL CUSTOMERS
         @GetMapping("/customers")
