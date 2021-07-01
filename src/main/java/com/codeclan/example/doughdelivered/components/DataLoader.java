@@ -32,7 +32,13 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(customer1);
 
         Customer customer2 = new Customer("Brian", "Jones", "brianjones@gmail.com", "25 King Road, London,SW4 5PX");
-        customerRepository.save(customer1);
+        customerRepository.save(customer2);
+
+        Item doughballs = new Item("dough balls", "12 first class doughballs from Italy", 24.99);
+        itemRepository.save(doughballs);
+
+        Item sauce = new Item("tomato sauce", "finest pizza sauce in the world", 12.20);
+        itemRepository.save(sauce);
 
         Order order1 = new Order(customer1, "25/06/2021");
         orderRepository.save(order1);
@@ -40,11 +46,7 @@ public class DataLoader implements ApplicationRunner {
         Order order2 = new Order(customer2, "20/03/2021");
         orderRepository.save(order2);
 
-        Item doughballs = new Item("dough balls", "12 first class doughballs from Italy", 24.99);
-        itemRepository.save(doughballs);
 
-        Item sauce = new Item("tomato sauce", "finest pizza sauce in the world", 12.20);
-        itemRepository.save(sauce);
 
 
     }

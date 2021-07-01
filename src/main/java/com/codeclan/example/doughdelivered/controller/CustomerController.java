@@ -15,24 +15,25 @@ import java.util.List;
     @RestController
     public class CustomerController {
 
-    @Autowired
-    CustomerRepository customerRepository;
+        @Autowired
+        CustomerRepository customerRepository;
 
-    @Autowired
-    OrderRepository orderRepository;
+        @Autowired
+        OrderRepository orderRepository;
 
-    @Autowired
-    ItemRepository itemRepository;
+        @Autowired
+        ItemRepository itemRepository;
 
-//    GET ALL CUSTOMERS
-    @GetMapping("/customers")
-    public ResponseEntity<List<Customer>> getAllCustomers(){
-        return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
+        //    GET ALL CUSTOMERS
+        @GetMapping("/customers")
+        public ResponseEntity<List<Customer>> getAllCustomers() {
+            return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
+        }
     }
 //    GET CUSTOMER DETAILS BY CUSTOMER ID
     @GetMapping(value="/customers/{id}")
     public ResponseEntity<Customer> getCustomer(@PathVariable Long id) {
-        return new ResponseEntity<>(customerRepository.findById(id), HttpStatus.OK);
+        return new ResponseEntity(customerRepository.findById(id), HttpStatus.OK);
     }
     // CREATE - ADDING A CUSTOMER TO DATABASE
     @PostMapping("/customers")
@@ -43,7 +44,7 @@ import java.util.List;
 
 //     UPDATE CUSTOMER
 
-    @PutMapping(value ="/{id}")
+    @PutMapping(value ="/customer/{id}")
     public ResponseEntity<Customer> putCustomer(@RequestBody Customer customer, @PathVariable Long id){
         Customer foundCustomer = customerRepository.findById(id).get();
         foundCustomer.setFirstName(customer.getFirstName());
