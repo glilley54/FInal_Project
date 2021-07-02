@@ -37,11 +37,14 @@ public class DataLoader implements ApplicationRunner {
         Customer customer2 = new Customer("Brian", "Jones", "brianjones@gmail.com", "25 King Road, London,SW4 5PX");
         customerRepository.save(customer2);
 
-        Item doughballs = new Item("dough balls", "12 first class doughballs from Italy", 24.99);
+        Item doughballs = new Item("Dough balls", "finest dough in the world",16.00,"image");
         itemRepository.save(doughballs);
 
-        Item sauce = new Item("tomato sauce", "finest pizza sauce in the world", 12.20);
+        Item sauce = new Item("Mozzarella cheese", "finest sauce in the world",7.00,"image");
         itemRepository.save(sauce);
+
+        Item cheese = new Item("Mozzarella cheese", "finest cheese in the world",08.00,"image");
+        itemRepository.save(cheese);
 
         Order order1 = new Order(customer1, "25/06/2021");
         order1.addItem(doughballs);

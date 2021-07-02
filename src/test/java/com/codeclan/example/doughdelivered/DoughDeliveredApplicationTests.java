@@ -25,16 +25,16 @@ class DoughDeliveredApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	public void customerHasOrderWithItems(){
-		Customer customer3 =new Customer("Bob","Fossil","bob@hello.com","40 Long road, Edinburgh, Eh2 1LM");
-		Item cheese = new Item("Mozzerella","Tasty cheese",08.00);
-		itemRepository.save(cheese);
-		Order order3 = new Order(customer3 ,"10/06/20");
-		orderRepository.save(order3);
+//	@Test
+//	public void customerHasOrderWithItems(){
+//		Customer customer3 =new Customer("Bob","Fossil","bob@hello.com","40 Long road, Edinburgh, Eh2 1LM");
+//		Item cheese = new Item("Mozzerella","Tasty cheese",08.00);
+//		itemRepository.save(cheese);
+//		Order order3 = new Order(customer3 ,"10/06/20");
+//		orderRepository.save(order3);
 
 
 //
 //		assertEquals("John", customer.getFirstName);
 	}
-}
+

@@ -25,6 +25,9 @@ public class Item {
     @Column(name = "price")
     private Double price;
 
+    @Column(name= "image")
+    private String image;
+
 
     @JsonIgnoreProperties(value = "items")
     @ManyToMany
@@ -39,11 +42,12 @@ public class Item {
     public Item() {
     }
 
-    public Item(String type, String description, Double price) {
+    public Item(String type, String description, Double price, String image) {
 
         this.type = type;
         this.description = description;
         this.price = price;
+        this.image = image;
         this.orders = new ArrayList<Order>();
     }
 
@@ -85,5 +89,13 @@ public class Item {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
