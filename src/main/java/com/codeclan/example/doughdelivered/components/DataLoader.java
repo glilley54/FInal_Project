@@ -37,13 +37,13 @@ public class DataLoader implements ApplicationRunner {
         Customer customer2 = new Customer("Brian", "Jones", "brianjones@gmail.com", "25 King Road, London,SW4 5PX");
         customerRepository.save(customer2);
 
-        Item doughballs = new Item("Dough balls", "finest dough in the world",16.00,"image");
+        Item doughballs = new Item("Dough balls", "finest dough in the world",16.00,"https://cdn.shopify.com/s/files/1/0624/9853/products/ooni-frozen-dough-product-studio-0720-1-700x700-2083620_521x521.png?v=1596526089");
         itemRepository.save(doughballs);
 
-        Item sauce = new Item("Mozzarella cheese", "finest sauce in the world",7.00,"image");
+        Item sauce = new Item("Tomato Sauce", "finest sauce in the world",7.00,"https://www.cookingclassy.com/wp-content/uploads/2020/05/pizza-sauce-17.jpg");
         itemRepository.save(sauce);
 
-        Item cheese = new Item("Mozzarella cheese", "finest cheese in the world",08.00,"image");
+        Item cheese = new Item("Mozzarella cheese", "finest cheese in the world",08.00,"https://static.toiimg.com/photo/75296834.cms");
         itemRepository.save(cheese);
 
         Order order1 = new Order(customer1, "25/06/2021");
@@ -52,6 +52,9 @@ public class DataLoader implements ApplicationRunner {
 
         Order order2 = new Order(customer2, "20/03/2021");
         orderRepository.save(order2);
+
+
+
 
 
 
