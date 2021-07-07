@@ -33,11 +33,11 @@ public class OrdersController {
         public ResponseEntity<List<Order>> getAllOrders() {
             return new ResponseEntity<>(orderRepository.findAll(), HttpStatus.OK);
         }
-//        //    GET ORDER DETAILS BY ORDER ID
-//        @GetMapping(value="/{id}")
-//        public ResponseEntity<Order> getOrder(@PathVariable Long id) {
-//            return new ResponseEntity<>(orderRepository.findById(id), HttpStatus.OK);
-//        }
+        //    GET ORDER DETAILS BY ORDER ID
+        @GetMapping(value="/orders/{id}")
+        public ResponseEntity<Order> getOrder(@PathVariable Long id) {
+            return new ResponseEntity(orderRepository.findById(id), HttpStatus.OK);
+        }
 //
             // CREATE - ADDING AN ORDER TO DATABASE
         @PostMapping("/orders")
